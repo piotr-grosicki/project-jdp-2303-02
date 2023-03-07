@@ -39,7 +39,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public void createProduct(ProductDto productDto) {
+    public void createProduct(@RequestBody ProductDto productDto) {
 
     }
 }
