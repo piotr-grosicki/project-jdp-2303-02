@@ -27,7 +27,7 @@ public class CartController {
         return new CartDto();
     }
 
-    @DeleteMapping(value = "product={productId}?cart={cartId}")
+    @DeleteMapping(value = "deleteProducts/{productId}/{cartId}")
     public void removeProductFromCart(@PathVariable Long productId, @PathVariable Long cartId) {
 
     }
