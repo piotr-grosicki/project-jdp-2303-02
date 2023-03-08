@@ -1,6 +1,7 @@
 package com.kodilla.ecommercee;
 
-import org.springframework.http.MediaType;
+import com.kodilla.domain.CartDto;
+import com.kodilla.domain.ProductDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -8,30 +9,31 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/carts")
+@CrossOrigin("*")
 public class CartController {
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, value = "createNewCart")
-    public void createCart() {
+    @PostMapping
+    public void createCart(@RequestBody CartDto cartDto) {
 
     }
 
-    @GetMapping(value = "cartId={cartId}")
-    public List<Object> getProductsFromCart(@PathVariable Long cartId) {
+    @GetMapping(value = "{cartId}")
+    public List<CartDto> getProductsFromCart(@PathVariable Long cartId) {
         return new ArrayList<>();
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, value = "addProducts")
-    public void addProductsToCart() {
-
+    @PutMapping
+    public CartDto addProductsToCart(@RequestBody ProductDto productDto) {
+        return new CartDto();
     }
 
-    @DeleteMapping(value = "removeProduct={productId}?fromCart={cartId}")
+    @DeleteMapping(value = "product={productId}?cart={cartId}")
     public void removeProductFromCart(@PathVariable Long productId, @PathVariable Long cartId) {
 
     }
 
-    @PostMapping(value = "createOrderFromCart={id}")
-    public void createOrder(@PathVariable Long id) {
+    @PostMapping("{cartId}")
+    public void createOrder(@PathVariable Long cartId) {
 
     }
 }
