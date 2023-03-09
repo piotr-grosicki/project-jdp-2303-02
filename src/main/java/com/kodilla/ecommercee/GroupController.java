@@ -1,7 +1,7 @@
 package com.kodilla.ecommercee;
 
 
-import domain.GroupDto;
+import com.kodilla.domain.GroupDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package domain;
+package com.kodilla.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
