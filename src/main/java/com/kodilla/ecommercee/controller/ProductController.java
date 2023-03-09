@@ -20,7 +20,7 @@ public class ProductController {
         List<ProductDto> productList = new ArrayList<>();
         productList.add(new ProductDto(1L, "testProduct1", new BigDecimal("12.3")));
         productList.add(new ProductDto(1L, "testProduct2", new BigDecimal("2.3")));
-        return new ArrayList<>();
+        return productList;
     }
 
     @GetMapping(value = "{productId}")
