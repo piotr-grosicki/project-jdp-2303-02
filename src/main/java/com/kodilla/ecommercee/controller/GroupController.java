@@ -1,10 +1,8 @@
-package com.kodilla.ecommercee;
+package com.kodilla.ecommercee.controller;
 
-import domain.GroupDto;
-import org.springframework.http.MediaType;
+import com.kodilla.ecommercee.domain.GroupDto;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
