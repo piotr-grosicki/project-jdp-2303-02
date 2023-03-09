@@ -1,8 +1,8 @@
-package com.kodilla.ecommercee;
+package com.kodilla.ecommercee.controller;
 
-import com.kodilla.ecommercee.domain.product.ProductDto;
+
+import com.kodilla.ecommercee.domain.ProductDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -20,11 +20,12 @@ public class ProductController {
         List<ProductDto> productList = new ArrayList<>();
         productList.add(new ProductDto(1L, "testProduct1", new BigDecimal("12.3")));
         productList.add(new ProductDto(1L, "testProduct2", new BigDecimal("2.3")));
-        return productList;
+        return new ArrayList<>();
     }
 
     @GetMapping(value = "{productId}")
     public ProductDto getProduct(@PathVariable Long productId) {
+
         return new ProductDto(1L, "testproduct", new BigDecimal("12.3"));
     }
 

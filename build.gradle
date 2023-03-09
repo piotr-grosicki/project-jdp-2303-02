@@ -30,6 +30,8 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.22'
     runtimeOnly('com.h2database:h2')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+    implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.32'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
 }
