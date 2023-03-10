@@ -26,3 +26,4 @@ public class Cart {
     private List<Product> products = new ArrayList<>();
 
 }
+
