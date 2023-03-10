@@ -35,6 +35,4 @@ public class GroupController {
     public GroupDto updateGroup() {
         return new GroupDto(1L, "update test");
     }
-
-
 }
