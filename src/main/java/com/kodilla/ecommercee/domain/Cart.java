@@ -12,21 +12,14 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "PRODUCT_GROUP")
-public class Group {
+@Entity(name = "CART")
+public class Cart {
 
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "GROUP_ID", unique = true)
+    @Column(name = "CART_ID", unique = true)
     private long id;
-    @Column(name = "GROUP_NAME")
-    private String groupName;
-    @OneToMany(
-            targetEntity = Product.class,
-            mappedBy = "productGroup",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Product> products = new ArrayList<>();
 }

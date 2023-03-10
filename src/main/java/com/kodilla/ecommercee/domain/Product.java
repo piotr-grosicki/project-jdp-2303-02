@@ -29,4 +29,11 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "GROUP_ID")
     private Group productGroup;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "PRODUCT_CART",
+            joinColumns = {@JoinColumn(name = "PRODUCT_ID", referencedColumnName = "PRODUCT_ID")},
+            inverseJoinColumns = {@JoinColumn(name = "CART_ID", referencedColumnName = "CART_ID")}
+    )
+    private List<Cart> carts = new ArrayList<>();
 }
