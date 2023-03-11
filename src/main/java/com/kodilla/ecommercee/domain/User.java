@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity(name = "USER")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID",unique=true)
