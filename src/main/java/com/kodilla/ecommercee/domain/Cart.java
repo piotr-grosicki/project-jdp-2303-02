@@ -1,25 +1,28 @@
 package com.kodilla.ecommercee.domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "CART")
+@Entity
 public class Cart {
-
     @Id
-    @GeneratedValue
-    @NotNull
-    @Column(name = "CART_ID", unique = true)
-    private long id;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "USER_ID")
+    private User user;
+
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "carts")
     private List<Product> products = new ArrayList<>();
+
 }

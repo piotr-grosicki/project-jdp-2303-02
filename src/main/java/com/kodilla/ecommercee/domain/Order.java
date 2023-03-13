@@ -2,7 +2,6 @@ package com.kodilla.ecommercee.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
